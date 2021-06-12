@@ -14,12 +14,23 @@ car_manager = CarManager()
 screen.listen()
 screen.onkey(player.move, "w")
 
-game_is_on = True
-num = 0
-while num < 10:
-    time.sleep(0.5)
+game_is_on= True
+
+while game_is_on:
+    time.sleep(0.1)
     screen.update()
     car_manager.create_car()
     car_manager.moving_forward()
+
+    #Detect car hit
+    for car in car_manager.cars[:]:
+        if player.distance(car) < 10:
+            print("hit")
+            game_is_on = False
+
+    #Detect win
+
+    if player.ycor() > 280:
+        print("win")
 
 screen.exitonclick()

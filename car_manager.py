@@ -18,7 +18,7 @@ class CarManager():
         new_car.penup()
         new_car.setheading(180)
         new_car.color(random.choice(COLORS))
-        new_car.start_y = random.choice(list(range(-280,280,25)))
+        new_car.start_y = random.choice(list(range(-280,280,5)))
         new_car.start_x = 280
         new_car.goto(new_car.start_x, new_car.start_y)
         self.cars.append(new_car)
