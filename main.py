@@ -24,7 +24,7 @@ while game_is_on:
 
     #Detect car hit
     for car in car_manager.cars[:]:
-        if player.distance(car) < 10:
+        if player.distance(car) < 20:
             print("hit")
             game_is_on = False
 
@@ -32,5 +32,6 @@ while game_is_on:
 
     if player.ycor() > 280:
         print("win")
+        game_is_on = False
 
 screen.exitonclick()
